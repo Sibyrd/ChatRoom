@@ -9,8 +9,13 @@ server.on("connection", socket => {
     console.log("Connected: ", socket.id);
     socket.on("disconnect", () => {console.log("Disconnected: ", socket.id);});
     socket.on("message", message => {
+        if (message == "") {
+            console.log("Empty message - returning");
+            return
+        }
         if (count===0) {
             username = message;
+            count++;
         } else {
             currmessage = `${username}: ${message}`;
             console.log(currmessage);
