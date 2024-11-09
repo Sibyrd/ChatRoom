@@ -28,6 +28,7 @@ public class WebsocketClient {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
+            Interface.messageField.setText("");
         });
     }
 
