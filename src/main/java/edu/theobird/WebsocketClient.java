@@ -11,7 +11,7 @@ public class WebsocketClient {
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
 
         try {
-            URI address = new URI("ws://localhost:8080");
+            URI address = new URI("ws://localhost:1273");
             container.connectToServer(WebsocketClient.class, address);
         } catch (Exception e) {
             throw new RuntimeException(e);
