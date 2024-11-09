@@ -7,7 +7,7 @@ server.on("connection", socket => {
     let username;
     let currmessage;
     console.log("Connected: ", socket.id);
-    socket.on("disconnect", () => {console.log("Disconnected: ", socket.id);});
+    socket.on("close", () => {console.log("Disconnected: ", socket.id);});
     socket.on("message", message => {
         if (message == "") {
             console.log("Empty message - returning");
